@@ -1,458 +1,709 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5eee4">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мне можно — женский клуб Алёны Затолокиной</title>
 
-  <title>Мне можно — женский клуб Алёны Затолокиной</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@300;400;500&family=Marck+Script&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Женский клуб «Мне можно» — пространство Алёны Затолокиной о любви, чувствах, отношениях и возвращении к себе.">
+<style>
+:root{
+  --cream:#f5eee4;
+  --paper:#fbf7f1;
+  --terra:#a96048;
+  --brown:#3d2a25;
+  --muted:#76635b;
+  --line:rgba(61,42,37,.18);
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+*{box-sizing:border-box}
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@300;400;500&family=Marck+Script&display=swap" rel="stylesheet">
+html{scroll-behavior:smooth}
 
-  <link rel="stylesheet" href="styles.css">
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--brown);
+  font-family:"Manrope",sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.nav{
+  height:80px;
+  padding:0 6vw;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+}
+
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;
+  font-weight:600;
+}
+
+.logo b{color:var(--terra)}
+
+.nav a:last-child{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  border-bottom:1px solid var(--brown);
+  padding-bottom:4px;
+}
+
+.hero{
+  min-height:calc(100vh - 80px);
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  align-items:center;
+  padding:60px 7vw 80px;
+}
+
+.eyebrow{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-weight:500;
+  margin-bottom:25px;
+}
+
+h1,h2{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+  letter-spacing:-.045em;
+}
+
+h1{
+  font-size:clamp(90px,11vw,170px);
+  line-height:.78;
+  margin:0 0 38px;
+}
+
+h1 em,h2 em{
+  color:var(--terra);
+  font-weight:500;
+}
+
+.lead{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(21px,2vw,28px);
+  line-height:1.3;
+  max-width:600px;
+  margin-bottom:36px;
+}
+
+.button{
+  display:inline-flex;
+  gap:35px;
+  align-items:center;
+  padding:18px 23px;
+  background:var(--brown);
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:11px;
+}
+
+.art{
+  position:relative;
+  height:620px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+.circle{
+  position:absolute;
+  width:75%;
+  aspect-ratio:1;
+  border-radius:50%;
+  background:var(--terra);
+  top:5%;
+  right:0;
+}
+
+.woman{
+  position:relative;
+  z-index:2;
+  width:90%;
+  height:90%;
+}
+
+.hand{
+  position:absolute;
+  z-index:3;
+  right:0;
+  bottom:12%;
+  font-family:"Marck Script",cursive;
+  font-size:30px;
+  transform:rotate(-8deg);
+}
+
+.section{
+  padding:110px 8vw;
+}
+
+.light{background:var(--paper)}
+
+.question{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9vw;
+}
+
+h2{
+  font-size:clamp(60px,8vw,120px);
+  line-height:.86;
+  margin:0;
+}
+
+.bigtext{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(22px,2vw,29px);
+  line-height:1.42;
+}
+
+.bigtext strong{color:var(--terra)}
+
+.title{
+  margin-bottom:65px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-left:1px solid var(--line);
+  border-top:1px solid var(--line);
+}
+
+.card{
+  min-height:290px;
+  padding:35px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.card:last-child{
+  grid-column:1/-1;
+}
+
+.number{
+  color:var(--terra);
+  font-size:11px;
+  letter-spacing:.15em;
+}
+
+.card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:500;
+  font-size:42px;
+  margin:55px 0 15px;
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+  max-width:520px;
+}
+
+.inside{
+  background:var(--terra);
+  color:var(--paper);
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:8vw;
+}
+
+.inside h2 em{color:white}
+
+.list{
+  border-top:1px solid rgba(255,255,255,.35);
+}
+
+.item{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  padding:28px 0;
+  border-bottom:1px solid rgba(255,255,255,.35);
+}
+
+.item span{
+  font-size:11px;
+  opacity:.6;
+}
+
+.item h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;
+  font-weight:500;
+  margin:0 0 7px;
+}
+
+.item p{
+  font-size:14px;
+  line-height:1.6;
+  opacity:.85;
+  margin:0;
+}
+
+.permission{
+  text-align:center;
+}
+
+.permission h2{margin-bottom:50px}
+
+.chips{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+}
+
+.chips span{
+  padding:12px 18px;
+  border:1px solid var(--line);
+  border-radius:50px;
+  background:var(--cream);
+  font-family:"Cormorant Garamond",serif;
+  font-size:20px;
+}
+
+.final{
+  min-height:680px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.final .logo{
+  margin-bottom:45px;
+}
+
+.final h2{
+  font-size:clamp(80px,12vw,160px);
+  margin-bottom:30px;
+}
+
+.final p{
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;
+  margin-bottom:30px;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 5vw;
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+}
+
+@media(max-width:800px){
+
+  .nav{
+    height:68px;
+    padding:0 20px;
+  }
+
+  .logo{font-size:24px}
+
+  .nav a:last-child{font-size:9px}
+
+  .hero{
+    display:block;
+    min-height:auto;
+    padding:65px 22px 45px;
+  }
+
+  h1{
+    font-size:25vw;
+    margin-bottom:25px;
+  }
+
+  .lead{
+    font-size:22px;
+  }
+
+  .art{
+    height:105vw;
+    margin-top:25px;
+  }
+
+  .circle{
+    width:70%;
+    right:2%;
+  }
+
+  .woman{
+    width:100%;
+  }
+
+  .hand{
+    font-size:23px;
+  }
+
+  .section{
+    padding:75px 22px;
+  }
+
+  .question,
+  .inside{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  h2{
+    font-size:17vw;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card:last-child{
+    grid-column:auto;
+  }
+
+  .card{
+    min-height:250px;
+    padding:27px;
+  }
+
+  .card h3{
+    margin-top:42px;
+    font-size:36px;
+  }
+
+  .inside h2{
+    font-size:17vw;
+  }
+
+  .chips span{
+    font-size:18px;
+  }
+
+  .final{
+    min-height:570px;
+    padding:60px 22px;
+  }
+
+  .final h2{
+    font-size:24vw;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:12px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header class="nav">
-  <a class="brand" href="#top">
-    мне можно<span>.</span>
-  </a>
-
-  <a
-    class="nav-link"
-    href="https://t.me/AlenaZatolokina"
-    target="_blank"
-    rel="noopener"
-  >
-    вступить в клуб ↗
-  </a>
+  <div class="logo">мне можно<b>.</b></div>
+  <a href="https://t.me/AlenaZatolokina">вступить в клуб ↗</a>
 </header>
 
+<section class="hero">
 
-<main>
+  <div>
+    <div class="eyebrow">Женский клуб Алёны Затолокиной</div>
 
-  <!-- ПЕРВЫЙ ЭКРАН -->
+    <h1>
+      МНЕ<br>
+      <em>МОЖНО</em>
+    </h1>
 
-  <section class="hero" id="top">
-
-    <div class="hero-copy reveal">
-
-      <p class="eyebrow">
-        Женский клуб Алёны Затолокиной
-      </p>
-
-      <h1>
-        МНЕ<br>
-        <em>МОЖНО</em>
-      </h1>
-
-      <p class="lead">
-        Мне можно хотеть. Выбирать. Чувствовать.<br>
-        Быть разной. Любить. Жить свою жизнь.
-      </p>
-
-      <a
-        class="button"
-        href="https://t.me/AlenaZatolokina"
-        target="_blank"
-        rel="noopener"
-      >
-        Хочу в клуб <span>↗</span>
-      </a>
-
-    </div>
-
-
-    <div class="hero-art reveal">
-
-      <div class="sun"></div>
-
-      <svg
-        class="woman"
-        viewBox="0 0 520 650"
-        aria-hidden="true"
-      >
-
-        <g
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-
-          <path d="M252 76c-34 4-60 31-63 68-3 39 20 73 58 82 40 10 79-14 91-52 12-37-4-77-37-93-15-7-32-9-49-5z"/>
-
-          <path d="M205 111c21-36 76-54 118-20 26 21 33 58 21 88"/>
-
-          <path d="M221 92c-8 22-5 43 7 59M247 80c-5 23 1 48 17 66M275 80c2 24 13 45 31 58"/>
-
-          <path d="M228 225c-3 38-17 63-46 81-38 24-64 63-72 113-9 56 6 117 39 166"/>
-
-          <path d="M310 219c7 35 26 61 58 80 43 26 69 67 75 120 6 53-10 109-45 160"/>
-
-          <path d="M211 278c-28 53-34 111-17 174 12 44 31 84 56 121M329 275c27 56 32 115 13 177-13 43-34 84-62 122"/>
-
-          <path d="M178 340c27 29 56 43 88 44 35 1 67-14 97-46"/>
-
-          <path d="M190 398c24 21 49 31 76 31 30 0 59-12 87-36"/>
-
-          <path d="M214 466c18 13 36 20 55 20 20 0 39-7 58-21"/>
-
-        </g>
-
-      </svg>
-
-      <span class="script-note">
-        быть собой
-      </span>
-
-    </div>
-
-  </section>
-
-
-  <!-- ЗАЧЕМ КЛУБ -->
-
-  <section class="question section">
-
-    <p class="eyebrow reveal">
-      Зачем тебе клуб «Мне можно»?
+    <p class="lead">
+      Мне можно хотеть. Выбирать. Чувствовать.
+      Быть разной. Любить. Жить свою жизнь.
     </p>
 
-    <div class="question-grid">
+    <a class="button" href="https://t.me/AlenaZatolokina">
+      Хочу в клуб <span>↗</span>
+    </a>
+  </div>
 
-      <h2 class="reveal">
-        А чего<br>
-        <em>хочу я?</em>
-      </h2>
+  <div class="art">
 
+    <div class="circle"></div>
 
-      <div class="question-text reveal">
+    <svg class="woman" viewBox="0 0 520 650">
+      <g fill="none" stroke="#3d2a25" stroke-width="2.2"
+         stroke-linecap="round" stroke-linejoin="round">
 
-        <p>
-          Иногда мы настолько привыкаем быть сильными,
-          удобными, хорошими для всех, что перестаём
-          слышать себя.
-        </p>
+        <path d="M252 76c-34 4-60 31-63 68-3 39 20 73 58 82 40 10 79-14 91-52 12-37-4-77-37-93-15-7-32-9-49-5z"/>
 
-        <p>
-          Мы знаем, что должны делать. Но всё реже
-          спрашиваем себя:
-          <strong>«А чего хочу я?»</strong>
-        </p>
+        <path d="M205 111c21-36 76-54 118-20 26 21 33 58 21 88"/>
 
-        <p>
-          В клубе мы будем возвращаться к себе.
-          Не переделывать себя.
-          Не становиться «лучшей версией себя».
-          А вспоминать, какая ты настоящая.
-        </p>
+        <path d="M221 92c-8 22-5 43 7 59M247 80c-5 23 1 48 17 66M275 80c2 24 13 45 31 58"/>
 
-      </div>
+        <path d="M228 225c-3 38-17 63-46 81-38 24-64 63-72 113-9 56 6 117 39 166"/>
 
-    </div>
+        <path d="M310 219c7 35 26 61 58 80 43 26 69 67 75 120 6 53-10 109-45 160"/>
 
-  </section>
+        <path d="M211 278c-28 53-34 111-17 174 12 44 31 84 56 121M329 275c27 56 32 115 13 177-13 43-34 84-62 122"/>
 
+        <path d="M178 340c27 29 56 43 88 44 35 1 67-14 97-46"/>
 
-  <!-- НАПРАВЛЕНИЯ -->
+        <path d="M190 398c24 21 49 31 76 31 30 0 59-12 87-36"/>
 
-  <section class="directions section">
+        <path d="M214 466c18 13 36 20 55 20 20 0 39-7 58-21"/>
 
-    <div class="section-head reveal">
+      </g>
+    </svg>
 
-      <p class="eyebrow">
-        О чём будем говорить
-      </p>
+    <div class="hand">быть собой</div>
 
-      <h2>
-        Возвращаться <em>к себе</em>
-      </h2>
+  </div>
 
-    </div>
+</section>
 
 
-    <div class="cards">
+<section class="section light">
 
-      <article class="card reveal">
+  <div class="eyebrow">Зачем тебе клуб «Мне можно»?</div>
 
-        <span>01</span>
+  <div class="question">
 
-        <h3>Любить</h3>
-
-        <p>
-          О любви и отношениях. О близости, доверии,
-          границах и о том, как быть в отношениях
-          и не потерять себя.
-        </p>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <span>02</span>
-
-        <h3>Понимать себя</h3>
-
-        <p>
-          Разбираться в эмоциях, установках и сценариях.
-          Понимать свои реакции и то, что можно
-          с ними сделать.
-        </p>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <span>03</span>
-
-        <h3>Чувствовать</h3>
-
-        <p>
-          Возвращаться из головы в тело.
-          Замечать чувства, желания, усталость,
-          удовольствие и своё состояние.
-        </p>
-
-      </article>
-
-
-      <article class="card reveal">
-
-        <span>04</span>
-
-        <h3>Слышать душу</h3>
-
-        <p>
-          Останавливаться, замечать интуицию,
-          слышать желания и возвращаться туда,
-          где внутри становится тихо.
-        </p>
-
-      </article>
-
-
-      <article class="card card-wide reveal">
-
-        <span>05</span>
-
-        <h3>Разрешить себе</h3>
-
-        <p>
-          Не соглашаться. Отказаться.
-          Изменить мнение. Быть неудобной.
-          Хотеть большего. Начать сначала.
-          Быть счастливой.
-        </p>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- ЧТО ВНУТРИ -->
-
-  <section class="inside section">
-
-    <div class="inside-title reveal">
-
-      <p class="eyebrow">
-        Что будет внутри клуба
-      </p>
-
-      <h2>
-        Пространство,<br>
-        где <em>можно</em>
-      </h2>
-
-    </div>
-
-
-    <div class="inside-list">
-
-      <div class="inside-item reveal">
-
-        <b>01</b>
-
-        <div>
-          <h3>Темы месяца</h3>
-
-          <p>
-            Глубокий разговор о том,
-            что действительно волнует женщин.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="inside-item reveal">
-
-        <b>02</b>
-
-        <div>
-          <h3>Закрытый «Голос Любви»</h3>
-
-          <p>
-            Специальные подкасты
-            только для участниц клуба.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="inside-item reveal">
-
-        <b>03</b>
-
-        <div>
-          <h3>Практики и медитации</h3>
-
-          <p>
-            Чтобы не просто слушать,
-            а менять что-то в своей жизни.
-            Для состояния, тела, души,
-            отношений и внутренней опоры.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="inside-item reveal">
-
-        <b>04</b>
-
-        <div>
-          <h3>Живое общение женщин</h3>
-
-          <p>
-            Вопросы, поддержка, опыт и истории.
-            Разговор не только с Алёной,
-            но и друг с другом.
-          </p>
-        </div>
-
-      </div>
-
-
-      <div class="inside-item reveal">
-
-        <b>05</b>
-
-        <div>
-          <h3>Закрытые эфиры с Алёной</h3>
-
-          <p>
-            Темы приносят сами участницы.
-            Можно спросить:
-            «Алёна, а что делать, если…»
-            и получить её профессиональный взгляд.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- МНЕ МОЖНО -->
-
-  <section class="permission section">
-
-    <div class="permission-inner reveal">
-
-      <p class="eyebrow">
-        Вот здесь и рождается
-      </p>
-
-      <h2>
-        «Мне <em>можно</em>»
-      </h2>
-
-
-      <div class="permissions">
-
-        <span>мне можно не соглашаться</span>
-
-        <span>мне можно изменить мнение</span>
-
-        <span>мне можно хотеть большего</span>
-
-        <span>мне можно начать сначала</span>
-
-        <span>мне можно быть счастливой</span>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ФИНАЛ -->
-
-  <section class="final section">
-
-    <div class="final-mark reveal">
-      мне можно<span>.</span>
-    </div>
-
-    <h2 class="reveal">
-      Тебе тоже<br>
-      <em>можно.</em>
+    <h2>
+      А чего<br>
+      <em>хочу я?</em>
     </h2>
 
-    <p class="reveal">
-      Если откликается — напиши Алёне в Telegram.
-    </p>
+    <div class="bigtext">
 
-    <a
-      class="button reveal"
-      href="https://t.me/AlenaZatolokina"
-      target="_blank"
-      rel="noopener"
-    >
-      Присоединиться к клубу <span>↗</span>
-    </a>
+      <p>
+        Иногда мы настолько привыкаем быть сильными,
+        удобными, хорошими для всех, что перестаём слышать себя.
+      </p>
 
-  </section>
+      <p>
+        Мы знаем, что должны делать. Но всё реже спрашиваем:
+        <strong>«А чего хочу я?»</strong>
+      </p>
 
-</main>
+      <p>
+        В клубе мы будем возвращаться к себе.
+        Не переделывать себя. Не становиться «лучшей версией себя».
+        А вспоминать, какая ты настоящая.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="title">
+    <div class="eyebrow">О чём будем говорить</div>
+
+    <h2>
+      Возвращаться<br>
+      <em>к себе</em>
+    </h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="number">01</div>
+      <h3>Любить</h3>
+      <p>
+        О любви и отношениях. О близости, доверии,
+        границах и о том, как быть в отношениях
+        и не потерять себя.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="number">02</div>
+      <h3>Понимать себя</h3>
+      <p>
+        Разбираться в эмоциях, установках и сценариях.
+        Почему я так реагирую? Почему сложно сказать «нет»?
+        И что я могу с этим сделать?
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="number">03</div>
+      <h3>Чувствовать</h3>
+      <p>
+        Возвращаться из головы в тело. Замечать чувства,
+        желания, усталость, удовольствие и своё состояние.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="number">04</div>
+      <h3>Слышать душу</h3>
+      <p>
+        Останавливаться. Замечать интуицию.
+        Слышать желания. Возвращаться туда,
+        где внутри становится тихо.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="number">05</div>
+      <h3>Разрешить себе</h3>
+      <p>
+        Не соглашаться. Отказаться. Изменить мнение.
+        Быть неудобной. Хотеть большего.
+        Начать сначала. Быть счастливой.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section inside">
+
+  <div>
+    <div class="eyebrow">Что будет внутри клуба</div>
+
+    <h2>
+      Пространство,<br>
+      где <em>можно</em>
+    </h2>
+  </div>
+
+  <div class="list">
+
+    <div class="item">
+      <span>01</span>
+      <div>
+        <h3>Темы месяца</h3>
+        <p>
+          Глубокий разговор о том,
+          что действительно волнует женщин.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>02</span>
+      <div>
+        <h3>Закрытый «Голос Любви»</h3>
+        <p>Специальные подкасты только для участниц.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>03</span>
+      <div>
+        <h3>Психологические практики</h3>
+        <p>
+          Чтобы не просто слушать,
+          а менять что-то в своей жизни.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>04</span>
+      <div>
+        <h3>Медитации месяца</h3>
+        <p>
+          Для состояния, тела, души,
+          отношений и внутренней опоры.
+        </p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>05</span>
+      <div>
+        <h3>Живое общение женщин</h3>
+        <p>Поддержка, опыт, вопросы и истории.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span>06</span>
+      <div>
+        <h3>Закрытые эфиры с Алёной</h3>
+        <p>
+          Можно спросить: «Алёна, а что делать, если…»
+          и получить её профессиональный взгляд.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section light permission">
+
+  <div class="eyebrow">Вот здесь и рождается</div>
+
+  <h2>
+    «Мне <em>можно</em>»
+  </h2>
+
+  <div class="chips">
+    <span>мне можно не соглашаться</span>
+    <span>мне можно отказаться</span>
+    <span>мне можно изменить мнение</span>
+    <span>мне можно быть неудобной</span>
+    <span>мне можно хотеть большего</span>
+    <span>мне можно начать сначала</span>
+    <span>мне можно быть счастливой</span>
+  </div>
+
+</section>
+
+
+<section class="final">
+
+  <div class="logo">мне можно<b>.</b></div>
+
+  <h2>
+    Тебе тоже<br>
+    <em>можно.</em>
+  </h2>
+
+  <p>
+    Если откликается — напиши Алёне в Telegram.
+  </p>
+
+  <a class="button" href="https://t.me/AlenaZatolokina">
+    Присоединиться к клубу ↗
+  </a>
+
+</section>
 
 
 <footer>
-
-  <span>
-    Женский клуб «Мне можно»
-  </span>
-
-  <a
-    href="https://t.me/AlenaZatolokina"
-    target="_blank"
-    rel="noopener"
-  >
-    @AlenaZatolokina
-  </a>
-
+  <span>Женский клуб «Мне можно»</span>
+  <span>@AlenaZatolokina</span>
 </footer>
-
-
-<script src="script.js"></script>
 
 </body>
 </html>
