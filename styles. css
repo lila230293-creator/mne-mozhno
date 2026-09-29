@@ -174,13 +174,11 @@ p {
   z-index: 3;
 }
 
-/* ОБЩИЕ СЕКЦИИ */
+/* СЕКЦИИ */
 
 .section {
   padding: 120px 8vw;
 }
-
-/* А ЧЕГО ХОЧУ Я */
 
 .question {
   background: var(--paper);
@@ -404,8 +402,6 @@ p {
   margin-bottom: 32px;
 }
 
-/* ПОДВАЛ */
-
 footer {
   padding: 30px 5vw;
   border-top: 1px solid var(--line);
@@ -428,10 +424,9 @@ footer {
   transform: none;
 }
 
-/* МОБИЛЬНАЯ ВЕРСИЯ */
+/* ТЕЛЕФОН */
 
 @media (max-width: 800px) {
-
   .nav {
     height: 70px;
     padding: 0 22px;
